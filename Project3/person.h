@@ -6,19 +6,23 @@ using namespace std;
 class person
 {
 
-	string name;
-	int id;
+	string FirstName;
+	string LastName;
+	string id;
 
 public:
 	person();
 	~person();
 
-	void set_name(string s);
-	string get_name();
+	void set_FirstName(string s);
+	string get_Firstname();
 
+	
+	void set_LastName(string s);
+	string get_LastName();
 
-	void set_id(int i);
-	int get_id();
+	void set_id(string i);
+	string get_id();
 
 
 

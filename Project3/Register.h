@@ -7,6 +7,11 @@
 #include "MyForm2.h"
 #include "MyForm3.h"
 #include "MyForm4.h"
+#include "Files.h"
+#include <string>
+#include <iostream>
+#include <msclr\marshal_cppstd.h>
+using namespace std;
 
 namespace Project3 {
 
@@ -90,8 +95,8 @@ namespace Project3 {
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Register::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->bunifuMaterialTextbox1 = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->bunifuMaterialTextbox2 = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
 			this->bunifuMaterialTextbox3 = (gcnew Bunifu::Framework::UI::BunifuMaterialTextbox());
@@ -120,17 +125,6 @@ namespace Project3 {
 			this->panel1->Size = System::Drawing::Size(399, 528);
 			this->panel1->TabIndex = 0;
 			// 
-			// pictureBox1
-			// 
-			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 0);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(399, 528);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
-			this->pictureBox1->TabIndex = 0;
-			this->pictureBox1->TabStop = false;
-			// 
 			// label1
 			// 
 			this->label1->Font = (gcnew System::Drawing::Font(L"Andalus", 24, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
@@ -143,6 +137,17 @@ namespace Project3 {
 			this->label1->Text = L"government is ourselves ";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			this->label1->Click += gcnew System::EventHandler(this, &Register::label1_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(399, 528);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::CenterImage;
+			this->pictureBox1->TabIndex = 0;
+			this->pictureBox1->TabStop = false;
 			// 
 			// bunifuMaterialTextbox1
 			// 
@@ -162,7 +167,6 @@ namespace Project3 {
 			this->bunifuMaterialTextbox1->Name = L"bunifuMaterialTextbox1";
 			this->bunifuMaterialTextbox1->Size = System::Drawing::Size(370, 44);
 			this->bunifuMaterialTextbox1->TabIndex = 1;
-			this->bunifuMaterialTextbox1->Text = L"bunifuMaterialTextbox1";
 			this->bunifuMaterialTextbox1->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// bunifuMaterialTextbox2
@@ -183,7 +187,6 @@ namespace Project3 {
 			this->bunifuMaterialTextbox2->Name = L"bunifuMaterialTextbox2";
 			this->bunifuMaterialTextbox2->Size = System::Drawing::Size(370, 44);
 			this->bunifuMaterialTextbox2->TabIndex = 2;
-			this->bunifuMaterialTextbox2->Text = L"bunifuMaterialTextbox2";
 			this->bunifuMaterialTextbox2->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// bunifuMaterialTextbox3
@@ -204,8 +207,8 @@ namespace Project3 {
 			this->bunifuMaterialTextbox3->Name = L"bunifuMaterialTextbox3";
 			this->bunifuMaterialTextbox3->Size = System::Drawing::Size(370, 44);
 			this->bunifuMaterialTextbox3->TabIndex = 3;
-			this->bunifuMaterialTextbox3->Text = L"bunifuMaterialTextbox3";
 			this->bunifuMaterialTextbox3->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
+			this->bunifuMaterialTextbox3->OnValueChanged += gcnew System::EventHandler(this, &Register::bunifuMaterialTextbox3_OnValueChanged);
 			// 
 			// bunifuMaterialTextbox4
 			// 
@@ -215,7 +218,7 @@ namespace Project3 {
 				static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->bunifuMaterialTextbox4->HintForeColor = System::Drawing::Color::Empty;
 			this->bunifuMaterialTextbox4->HintText = L"";
-			this->bunifuMaterialTextbox4->isPassword = false;
+			this->bunifuMaterialTextbox4->isPassword = true;
 			this->bunifuMaterialTextbox4->LineFocusedColor = System::Drawing::Color::Teal;
 			this->bunifuMaterialTextbox4->LineIdleColor = System::Drawing::Color::Teal;
 			this->bunifuMaterialTextbox4->LineMouseHoverColor = System::Drawing::Color::Teal;
@@ -225,7 +228,6 @@ namespace Project3 {
 			this->bunifuMaterialTextbox4->Name = L"bunifuMaterialTextbox4";
 			this->bunifuMaterialTextbox4->Size = System::Drawing::Size(370, 44);
 			this->bunifuMaterialTextbox4->TabIndex = 4;
-			this->bunifuMaterialTextbox4->Text = L"bunifuMaterialTextbox4";
 			this->bunifuMaterialTextbox4->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// bunifuMaterialTextbox5
@@ -236,7 +238,7 @@ namespace Project3 {
 				static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)));
 			this->bunifuMaterialTextbox5->HintForeColor = System::Drawing::Color::Empty;
 			this->bunifuMaterialTextbox5->HintText = L"";
-			this->bunifuMaterialTextbox5->isPassword = false;
+			this->bunifuMaterialTextbox5->isPassword = true;
 			this->bunifuMaterialTextbox5->LineFocusedColor = System::Drawing::Color::Teal;
 			this->bunifuMaterialTextbox5->LineIdleColor = System::Drawing::Color::Teal;
 			this->bunifuMaterialTextbox5->LineMouseHoverColor = System::Drawing::Color::Teal;
@@ -246,7 +248,6 @@ namespace Project3 {
 			this->bunifuMaterialTextbox5->Name = L"bunifuMaterialTextbox5";
 			this->bunifuMaterialTextbox5->Size = System::Drawing::Size(370, 44);
 			this->bunifuMaterialTextbox5->TabIndex = 5;
-			this->bunifuMaterialTextbox5->Text = L"bunifuMaterialTextbox5";
 			this->bunifuMaterialTextbox5->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 			// 
 			// label2
@@ -345,6 +346,7 @@ namespace Project3 {
 			this->bunifuFlatButton1->Textcolor = System::Drawing::Color::White;
 			this->bunifuFlatButton1->TextFont = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->bunifuFlatButton1->Click += gcnew System::EventHandler(this, &Register::bunifuFlatButton1_Click);
 			// 
 			// bunifuElipse1
 			// 
@@ -414,5 +416,38 @@ namespace Project3 {
 				 this->Close(); 
 				 Otherform->Show(); 
 			 }
+private: System::Void bunifuFlatButton1_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			 Files FileSystem;
+			 citizen citizenObject;
+
+			 String^ fs=bunifuMaterialTextbox1->Text;
+			 String^ ls=bunifuMaterialTextbox2->Text;
+			 String^ nat_id=bunifuMaterialTextbox3->Text;
+			 String^ pass=bunifuMaterialTextbox4->Text;
+			 String^ retPass=bunifuMaterialTextbox5->Text;
+
+			  msclr::interop::marshal_context context;
+
+			 string First_Name=msclr::interop::marshal_as<string >(fs);
+			 string Last_Name=msclr::interop::marshal_as<string >(ls);
+			 string national_id=msclr::interop::marshal_as<string >(nat_id);
+			 string password=msclr::interop::marshal_as<string >(pass);
+			 string retype_password=msclr::interop::marshal_as<string >(retPass);
+
+			 citizenObject.sign_up(First_Name,Last_Name,national_id,password,"Male",21);
+			 FileSystem.write_citizen(citizenObject);
+
+			 bunifuMaterialTextbox1->Text="";
+			 bunifuMaterialTextbox2->Text="";
+			 bunifuMaterialTextbox3->Text="";
+			 bunifuMaterialTextbox4->Text="";
+			 bunifuMaterialTextbox5->Text="";
+			 MessageBox::Show("Registered Successfully"); 
+			 this->Hide(); 
+			 Otherform->Show(); 
+		 }
+private: System::Void bunifuMaterialTextbox3_OnValueChanged(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }

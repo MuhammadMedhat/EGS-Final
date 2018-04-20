@@ -14,21 +14,31 @@ person::~person()
 }
 
 
-void person::set_name(string s)
+void person::set_FirstName(string s)
 {
-	name = s;
+	FirstName = s;
 }
-string person::get_name()
+string person::get_Firstname()
 {
-	return name;
+	return FirstName;
+}
+
+void person::set_LastName(string s)
+{
+	LastName = s;
+}
+string person::get_LastName()
+{
+	return LastName;
 }
 
 
-void person::set_id(int i)
+
+void person::set_id(string i)
 {
 	id = i;
 }
-int	person::get_id()
+string	person::get_id()
 {
 	return id;
 }

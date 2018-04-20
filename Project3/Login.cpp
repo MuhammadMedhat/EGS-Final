@@ -13,6 +13,6 @@ void main (array<String^>^args)
 
 	Application::EnableVisualStyles(); 
 	Application::SetCompatibleTextRenderingDefault(false); 
-	Project3::AdminProfile form; 
+	Project3::Login form; 
 	Application::Run(%form); 
 }

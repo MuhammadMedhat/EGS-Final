@@ -393,6 +393,7 @@ private: System::Void Login_Load(System::Object^  sender, System::EventArgs^  e)
 			
 		 }
 private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {			 
+			
 			 Register ^ f = gcnew Register(this); 
 			 this->Hide(); 
 			 f->Show(); 

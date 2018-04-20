@@ -205,7 +205,7 @@ Class Microsoft.VisualBasic.PowerPacks.Printing.Compatibility.VB6.GlobalModule: 
   Fields:
     Int32 DefaultIntegerValue = -1 : Assembly, Static, Literal, HasDefault
     Int16 DefaultShortValue = -1 : Assembly, Static, Literal, HasDefault
-    Single DefaultSingleValue = ليس رقمًا : Assembly, Static, Literal, HasDefault
+    Single DefaultSingleValue = NaN : Assembly, Static, Literal, HasDefault
   Properties:
     Microsoft.VisualBasic.PowerPacks.Printing.Compatibility.VB6.PrinterCollection Printers 'get ' : 
     System.Resources.ResourceManager SR 'get ' : 
@@ -1035,14 +1035,14 @@ Class Microsoft.VisualBasic.PowerPacks.DataRepeaterBindingInfo: NotPublic
   Methods:
     get_Control(): PrivateScope, Public, SpecialName
     set_Control(Control): PrivateScope, Public, SpecialName
-    set_PropertyName(String): PrivateScope, Public, SpecialName
     get_PropertyName(): PrivateScope, Public, SpecialName
+    set_PropertyName(String): PrivateScope, Public, SpecialName
     get_BindingField(): PrivateScope, Public, SpecialName
     set_BindingField(String): PrivateScope, Public, SpecialName
-    set_DataRepeater(DataRepeater): PrivateScope, Public, SpecialName
     get_DataRepeater(): PrivateScope, Public, SpecialName
-    set_DataRepeaterItem(DataRepeaterItem): PrivateScope, Public, SpecialName
+    set_DataRepeater(DataRepeater): PrivateScope, Public, SpecialName
     get_DataRepeaterItem(): PrivateScope, Public, SpecialName
+    set_DataRepeaterItem(DataRepeaterItem): PrivateScope, Public, SpecialName
 Class Microsoft.VisualBasic.PowerPacks.DataRepeaterBindingBase: AutoLayout, AnsiClass, Class, Abstract
     Void .ctor(Microsoft.VisualBasic.PowerPacks.DataRepeaterBindingInfo): PrivateScope, Public, SpecialName, RTSpecialName
   Properties:
@@ -1092,36 +1092,36 @@ Class Microsoft.VisualBasic.PowerPacks.DataRepeaterItem: AutoLayout, AnsiClass, 
     get_AccessibilityObject(): PrivateScope, Public, HideBySig, SpecialName
     get_AccessibleDefaultActionDescription(): PrivateScope, Public, HideBySig, SpecialName
     set_AccessibleDefaultActionDescription(String): PrivateScope, Public, HideBySig, SpecialName
-    set_AccessibleDescription(String): PrivateScope, Public, HideBySig, SpecialName
     get_AccessibleDescription(): PrivateScope, Public, HideBySig, SpecialName
+    set_AccessibleDescription(String): PrivateScope, Public, HideBySig, SpecialName
     get_AccessibleName(): PrivateScope, Public, HideBySig, SpecialName
     set_AccessibleName(String): PrivateScope, Public, HideBySig, SpecialName
-    set_AccessibleRole(AccessibleRole): PrivateScope, Public, HideBySig, SpecialName
     get_AccessibleRole(): PrivateScope, Public, HideBySig, SpecialName
+    set_AccessibleRole(AccessibleRole): PrivateScope, Public, HideBySig, SpecialName
     get_Anchor(): PrivateScope, Public, HideBySig, SpecialName
     set_Anchor(AnchorStyles): PrivateScope, Public, HideBySig, SpecialName
-    set_Dock(DockStyle): PrivateScope, Public, HideBySig, SpecialName
     get_Dock(): PrivateScope, Public, HideBySig, SpecialName
+    set_Dock(DockStyle): PrivateScope, Public, HideBySig, SpecialName
     get_IsCurrent(): PrivateScope, Public, SpecialName
     get_IsDirty(): PrivateScope, Public, SpecialName
     get_ItemIndex(): PrivateScope, Public, SpecialName
     get_Location(): PrivateScope, Public, HideBySig, SpecialName
     set_Location(Point): PrivateScope, Public, HideBySig, SpecialName
-    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
     get_Name(): PrivateScope, Public, HideBySig, SpecialName
-    set_TabIndex(Int32): PrivateScope, Public, HideBySig, SpecialName
+    set_Name(String): PrivateScope, Public, HideBySig, SpecialName
     get_TabIndex(): PrivateScope, Public, HideBySig, SpecialName
-    set_TabStop(Boolean): PrivateScope, Public, HideBySig, SpecialName
+    set_TabIndex(Int32): PrivateScope, Public, HideBySig, SpecialName
     get_TabStop(): PrivateScope, Public, HideBySig, SpecialName
+    set_TabStop(Boolean): PrivateScope, Public, HideBySig, SpecialName
     get_Visible(): PrivateScope, Public, HideBySig, SpecialName
     set_Visible(Boolean): PrivateScope, Public, HideBySig, SpecialName
-    set_EditingLocByRepeater(Boolean): PrivateScope, Assembly, SpecialName
     get_EditingLocByRepeater(): PrivateScope, Assembly, SpecialName
-    set_Editing(Boolean): PrivateScope, Assembly, SpecialName
+    set_EditingLocByRepeater(Boolean): PrivateScope, Assembly, SpecialName
     get_Editing(): PrivateScope, Assembly, SpecialName
+    set_Editing(Boolean): PrivateScope, Assembly, SpecialName
     get_DataRepeaterBindings(): PrivateScope, Assembly, SpecialName
-    set_IsInvalid(Boolean): PrivateScope, Assembly, SpecialName
     get_IsInvalid(): PrivateScope, Assembly, SpecialName
+    set_IsInvalid(Boolean): PrivateScope, Assembly, SpecialName
     get_UpdateAppearanceNeeded(): PrivateScope, Assembly, SpecialName
     set_UpdateAppearanceNeeded(Boolean): PrivateScope, Assembly, SpecialName
     add_ChildMouseDown(EventHandler): PrivateScope, Assembly, SpecialName
@@ -1141,8 +1141,8 @@ Class Microsoft.VisualBasic.PowerPacks.DataRepeaterItem+DataRepeaterItemAccessib
     System.Windows.Forms.AccessibleStates State 'get ' : 
     System.String Value 'get set' : 
   Methods:
-    set_Name(String): PrivateScope, Public, Virtual, CheckAccessOnOverride, SpecialName
     get_Name(): PrivateScope, Public, Virtual, CheckAccessOnOverride, SpecialName
+    set_Name(String): PrivateScope, Public, Virtual, CheckAccessOnOverride, SpecialName
     get_Bounds(): PrivateScope, Public, Virtual, CheckAccessOnOverride, SpecialName
     get_Parent(): PrivateScope, Public, Virtual, CheckAccessOnOverride, SpecialName
     get_Role(): PrivateScope, Public, Virtual, CheckAccessOnOverride, SpecialName
@@ -1483,8 +1483,12 @@ Class Microsoft.VisualBasic.PowerPacks.LineShape: AutoLayout, AnsiClass, Class, 
     System.EventHandler EndPointChanged: 
     System.EventHandler StartPointChanged: 
   Methods:
-    set_BoundRect(Rectangle): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
+    add_EndPointChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_EndPointChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_StartPointChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_StartPointChanged(EventHandler): PrivateScope, Public, SpecialName
     get_BoundRect(): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
+    set_BoundRect(Rectangle): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
     get_EndPoint(): PrivateScope, Public, SpecialName
     set_EndPoint(Point): PrivateScope, Public, SpecialName
     get_ExtentBounds(): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
@@ -1496,18 +1500,14 @@ Class Microsoft.VisualBasic.PowerPacks.LineShape: AutoLayout, AnsiClass, Class, 
     set_StartPoint(Point): PrivateScope, Public, SpecialName
     get_X1(): PrivateScope, Public, SpecialName
     set_X1(Int32): PrivateScope, Public, SpecialName
-    set_X2(Int32): PrivateScope, Public, SpecialName
     get_X2(): PrivateScope, Public, SpecialName
-    set_Y1(Int32): PrivateScope, Public, SpecialName
+    set_X2(Int32): PrivateScope, Public, SpecialName
     get_Y1(): PrivateScope, Public, SpecialName
+    set_Y1(Int32): PrivateScope, Public, SpecialName
     get_Y2(): PrivateScope, Public, SpecialName
     set_Y2(Int32): PrivateScope, Public, SpecialName
-    set_VirtualBounds(Rectangle): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
     get_VirtualBounds(): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
-    add_EndPointChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_EndPointChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_StartPointChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_StartPointChanged(EventHandler): PrivateScope, Public, SpecialName
+    set_VirtualBounds(Rectangle): PrivateScope, Assembly, Virtual, CheckAccessOnOverride, SpecialName
     DrawInternal(Graphics, Int32, Int32, Int32, Int32): PrivateScope, Assembly
     DrawToBitmap(Bitmap, Rectangle): PrivateScope, Public, Virtual, CheckAccessOnOverride
     GetRegionInternal(RegionType): PrivateScope, Assembly, Virtual, CheckAccessOnOverride
@@ -1538,8 +1538,8 @@ Class Microsoft.VisualBasic.PowerPacks.RectangleShape: AutoLayout, AnsiClass, Cl
   Properties:
     Int32 CornerRadius 'get set' : 
   Methods:
-    set_CornerRadius(Int32): PrivateScope, Public, SpecialName
     get_CornerRadius(): PrivateScope, Public, SpecialName
+    set_CornerRadius(Int32): PrivateScope, Public, SpecialName
     DrawInternal(Graphics, Rectangle): PrivateScope, Assembly, Virtual, CheckAccessOnOverride
     GetRegionInternal(RegionType): PrivateScope, Assembly, Virtual, CheckAccessOnOverride
     IsHit(Point): PrivateScope, Assembly, Virtual, CheckAccessOnOverride
@@ -1640,32 +1640,19 @@ Class Microsoft.VisualBasic.PowerPacks.Shape: AutoLayout, AnsiClass, Class, Publ
     System.EventHandler RegionChanged: 
     System.EventHandler VisibleChanged: 
   Methods:
-    get_AccessibilityObject(): PrivateScope, Public, SpecialName
-    get_AccessibleDefaultActionDescription(): PrivateScope, Public, SpecialName
-    set_AccessibleDefaultActionDescription(String): PrivateScope, Public, SpecialName
-    set_AccessibleDescription(String): PrivateScope, Public, SpecialName
-    get_AccessibleDescription(): PrivateScope, Public, SpecialName
-    set_AccessibleName(String): PrivateScope, Public, SpecialName
-    get_AccessibleName(): PrivateScope, Public, SpecialName
-    get_AccessibleRole(): PrivateScope, Public, SpecialName
-    set_AccessibleRole(AccessibleRole): PrivateScope, Public, SpecialName
-    get_Anchor(): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    set_Anchor(AnchorStyles): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    set_BorderColor(Color): PrivateScope, Public, SpecialName
-    get_BorderColor(): PrivateScope, Public, SpecialName
-    get_BorderStyle(): PrivateScope, Public, SpecialName
-    set_BorderStyle(DashStyle): PrivateScope, Public, SpecialName
-    get_BorderWidth(): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    set_BorderWidth(Int32): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    get_ExtentBounds(): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    get_BoundRect(): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    set_BoundRect(Rectangle): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    get_CanFocus(): PrivateScope, Public, SpecialName
-    get_CanSelect(): PrivateScope, Public, SpecialName
-    get_Container(): PrivateScope, Public, SpecialName
+    ResetCursor(): PrivateScope, Assembly
+    ResetSelectionColor(): PrivateScope, Assembly
+    ResetTag(): PrivateScope, Assembly
+    ShouldSerializeAccessibleDescription(): PrivateScope, Assembly
+    ShouldSerializeAccessibleName(): PrivateScope, Assembly
+    ShouldSerializeBorderColor(): PrivateScope, Assembly
+    ShouldSerializeContextMenuStrip(): PrivateScope, Assembly
+    ShouldSerializeCursor(): PrivateScope, Assembly
+    ShouldSerializeSelectionColor(): PrivateScope, Assembly
+    ShouldSerializeTag(): PrivateScope, Assembly
     get_ContainsFocus(): PrivateScope, Public, SpecialName
-    set_ContextMenu(ContextMenu): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
     get_ContextMenu(): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    set_ContextMenu(ContextMenu): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
     get_ContextMenuStrip(): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
     set_ContextMenuStrip(ContextMenuStrip): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
     get_Created(): PrivateScope, Public, SpecialName
@@ -1680,105 +1667,33 @@ Class Microsoft.VisualBasic.PowerPacks.Shape: AutoLayout, AnsiClass, Class, Publ
     get_HitTestRegion(): PrivateScope, Assembly, SpecialName
     get_InDesignMode(): PrivateScope, Assembly, SpecialName
     get_InSetVirtulBounds(): PrivateScope, Assembly, SpecialName
-    set_IsAccessible(Boolean): PrivateScope, Public, SpecialName
     get_IsAccessible(): PrivateScope, Public, SpecialName
+    set_IsAccessible(Boolean): PrivateScope, Public, SpecialName
     get_IsDisposed(): PrivateScope, Public, SpecialName
     get_ModifierKeys(): PrivateScope, Public, Static, SpecialName
     get_MouseButtons(): PrivateScope, Public, Static, SpecialName
     get_MousePosition(): PrivateScope, Public, Static, SpecialName
     get_Name(): PrivateScope, Public, SpecialName
     set_Name(String): PrivateScope, Public, SpecialName
-    set_Parent(ShapeContainer): PrivateScope, Public, SpecialName
     get_Parent(): PrivateScope, Public, SpecialName
+    set_Parent(ShapeContainer): PrivateScope, Public, SpecialName
     get_CanInvalidate(): PrivateScope, Assembly, SpecialName
     get_Pen(): PrivateScope, Assembly, SpecialName
     get_Properties(): PrivateScope, Assembly, SpecialName
-    set_Region(Region): PrivateScope, Public, SpecialName
     get_Region(): PrivateScope, Public, SpecialName
+    set_Region(Region): PrivateScope, Public, SpecialName
     get_Selected(): PrivateScope, Assembly, SpecialName
     get_SelectionColor(): PrivateScope, Public, SpecialName
     set_SelectionColor(Color): PrivateScope, Public, SpecialName
     get_ShapeRegion(): PrivateScope, Assembly, SpecialName
-    set_Tag(Object): PrivateScope, Public, SpecialName
     get_Tag(): PrivateScope, Public, SpecialName
+    set_Tag(Object): PrivateScope, Public, SpecialName
     get_UseWaitCursor(): PrivateScope, Public, SpecialName
     set_UseWaitCursor(Boolean): PrivateScope, Public, SpecialName
     get_Visible(): PrivateScope, Public, SpecialName
     set_Visible(Boolean): PrivateScope, Public, SpecialName
     get_VirtualBounds(): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
     set_VirtualBounds(Rectangle): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
-    add_ChangeUICues(UICuesEventHandler): PrivateScope, Public, SpecialName
-    remove_ChangeUICues(UICuesEventHandler): PrivateScope, Public, SpecialName
-    add_Click(EventHandler): PrivateScope, Public, SpecialName
-    remove_Click(EventHandler): PrivateScope, Public, SpecialName
-    add_ContextMenuChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_ContextMenuChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_ContextMenuStripChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_ContextMenuStripChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_CursorChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_CursorChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_DoubleClick(EventHandler): PrivateScope, Public, SpecialName
-    remove_DoubleClick(EventHandler): PrivateScope, Public, SpecialName
-    add_EnabledChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_EnabledChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_Enter(EventHandler): PrivateScope, Public, SpecialName
-    remove_Enter(EventHandler): PrivateScope, Public, SpecialName
-    add_GotFocus(EventHandler): PrivateScope, Public, SpecialName
-    remove_GotFocus(EventHandler): PrivateScope, Public, SpecialName
-    add_Invalidated(InvalidateEventHandler): PrivateScope, Public, SpecialName
-    remove_Invalidated(InvalidateEventHandler): PrivateScope, Public, SpecialName
-    remove_KeyDown(KeyEventHandler): PrivateScope, Public, SpecialName
-    add_KeyDown(KeyEventHandler): PrivateScope, Public, SpecialName
-    remove_KeyPress(KeyPressEventHandler): PrivateScope, Public, SpecialName
-    add_KeyPress(KeyPressEventHandler): PrivateScope, Public, SpecialName
-    remove_KeyUp(KeyEventHandler): PrivateScope, Public, SpecialName
-    add_KeyUp(KeyEventHandler): PrivateScope, Public, SpecialName
-    remove_Leave(EventHandler): PrivateScope, Public, SpecialName
-    add_Leave(EventHandler): PrivateScope, Public, SpecialName
-    remove_LostFocus(EventHandler): PrivateScope, Public, SpecialName
-    add_LostFocus(EventHandler): PrivateScope, Public, SpecialName
-    add_MouseClick(MouseEventHandler): PrivateScope, Public, SpecialName
-    remove_MouseClick(MouseEventHandler): PrivateScope, Public, SpecialName
-    remove_MouseDoubleClick(MouseEventHandler): PrivateScope, Public, SpecialName
-    add_MouseDoubleClick(MouseEventHandler): PrivateScope, Public, SpecialName
-    remove_MouseDown(MouseEventHandler): PrivateScope, Public, SpecialName
-    add_MouseDown(MouseEventHandler): PrivateScope, Public, SpecialName
-    remove_MouseEnter(EventHandler): PrivateScope, Public, SpecialName
-    add_MouseEnter(EventHandler): PrivateScope, Public, SpecialName
-    remove_MouseHover(EventHandler): PrivateScope, Public, SpecialName
-    add_MouseHover(EventHandler): PrivateScope, Public, SpecialName
-    remove_MouseLeave(EventHandler): PrivateScope, Public, SpecialName
-    add_MouseLeave(EventHandler): PrivateScope, Public, SpecialName
-    remove_MouseMove(MouseEventHandler): PrivateScope, Public, SpecialName
-    add_MouseMove(MouseEventHandler): PrivateScope, Public, SpecialName
-    remove_MouseUp(MouseEventHandler): PrivateScope, Public, SpecialName
-    add_MouseUp(MouseEventHandler): PrivateScope, Public, SpecialName
-    add_MouseWheel(MouseEventHandler): PrivateScope, Public, SpecialName
-    remove_MouseWheel(MouseEventHandler): PrivateScope, Public, SpecialName
-    add_Move(EventHandler): PrivateScope, Public, SpecialName
-    remove_Move(EventHandler): PrivateScope, Public, SpecialName
-    add_Paint(PaintEventHandler): PrivateScope, Public, SpecialName
-    remove_Paint(PaintEventHandler): PrivateScope, Public, SpecialName
-    add_ParentChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_ParentChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_PreviewKeyDown(PreviewKeyDownEventHandler): PrivateScope, Public, SpecialName
-    remove_PreviewKeyDown(PreviewKeyDownEventHandler): PrivateScope, Public, SpecialName
-    add_QueryAccessibilityHelp(QueryAccessibilityHelpEventHandler): PrivateScope, Public, SpecialName
-    remove_QueryAccessibilityHelp(QueryAccessibilityHelpEventHandler): PrivateScope, Public, SpecialName
-    add_RegionChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_RegionChanged(EventHandler): PrivateScope, Public, SpecialName
-    add_VisibleChanged(EventHandler): PrivateScope, Public, SpecialName
-    remove_VisibleChanged(EventHandler): PrivateScope, Public, SpecialName
-    ResetCursor(): PrivateScope, Assembly
-    ResetSelectionColor(): PrivateScope, Assembly
-    ResetTag(): PrivateScope, Assembly
-    ShouldSerializeAccessibleDescription(): PrivateScope, Assembly
-    ShouldSerializeAccessibleName(): PrivateScope, Assembly
-    ShouldSerializeBorderColor(): PrivateScope, Assembly
-    ShouldSerializeContextMenuStrip(): PrivateScope, Assembly
-    ShouldSerializeCursor(): PrivateScope, Assembly
-    ShouldSerializeSelectionColor(): PrivateScope, Assembly
-    ShouldSerializeTag(): PrivateScope, Assembly
     BringToFront(): PrivateScope, Public
     ClearCachedRegion(): PrivateScope, Assembly
     ClearVirtualBounds(): PrivateScope, Assembly
@@ -1818,6 +1733,91 @@ Class Microsoft.VisualBasic.PowerPacks.Shape: AutoLayout, AnsiClass, Class, Publ
     ResetAccessibleName(): PrivateScope, Assembly
     ResetBorderColor(): PrivateScope, Assembly
     ResetContextMenuStrip(): PrivateScope, Assembly
+    add_ChangeUICues(UICuesEventHandler): PrivateScope, Public, SpecialName
+    remove_ChangeUICues(UICuesEventHandler): PrivateScope, Public, SpecialName
+    add_Click(EventHandler): PrivateScope, Public, SpecialName
+    remove_Click(EventHandler): PrivateScope, Public, SpecialName
+    add_ContextMenuChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_ContextMenuChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_ContextMenuStripChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_ContextMenuStripChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_CursorChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_CursorChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_DoubleClick(EventHandler): PrivateScope, Public, SpecialName
+    remove_DoubleClick(EventHandler): PrivateScope, Public, SpecialName
+    add_EnabledChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_EnabledChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_Enter(EventHandler): PrivateScope, Public, SpecialName
+    remove_Enter(EventHandler): PrivateScope, Public, SpecialName
+    add_GotFocus(EventHandler): PrivateScope, Public, SpecialName
+    remove_GotFocus(EventHandler): PrivateScope, Public, SpecialName
+    add_Invalidated(InvalidateEventHandler): PrivateScope, Public, SpecialName
+    remove_Invalidated(InvalidateEventHandler): PrivateScope, Public, SpecialName
+    add_KeyDown(KeyEventHandler): PrivateScope, Public, SpecialName
+    remove_KeyDown(KeyEventHandler): PrivateScope, Public, SpecialName
+    add_KeyPress(KeyPressEventHandler): PrivateScope, Public, SpecialName
+    remove_KeyPress(KeyPressEventHandler): PrivateScope, Public, SpecialName
+    add_KeyUp(KeyEventHandler): PrivateScope, Public, SpecialName
+    remove_KeyUp(KeyEventHandler): PrivateScope, Public, SpecialName
+    add_Leave(EventHandler): PrivateScope, Public, SpecialName
+    remove_Leave(EventHandler): PrivateScope, Public, SpecialName
+    add_LostFocus(EventHandler): PrivateScope, Public, SpecialName
+    remove_LostFocus(EventHandler): PrivateScope, Public, SpecialName
+    add_MouseClick(MouseEventHandler): PrivateScope, Public, SpecialName
+    remove_MouseClick(MouseEventHandler): PrivateScope, Public, SpecialName
+    add_MouseDoubleClick(MouseEventHandler): PrivateScope, Public, SpecialName
+    remove_MouseDoubleClick(MouseEventHandler): PrivateScope, Public, SpecialName
+    add_MouseDown(MouseEventHandler): PrivateScope, Public, SpecialName
+    remove_MouseDown(MouseEventHandler): PrivateScope, Public, SpecialName
+    add_MouseEnter(EventHandler): PrivateScope, Public, SpecialName
+    remove_MouseEnter(EventHandler): PrivateScope, Public, SpecialName
+    add_MouseHover(EventHandler): PrivateScope, Public, SpecialName
+    remove_MouseHover(EventHandler): PrivateScope, Public, SpecialName
+    add_MouseLeave(EventHandler): PrivateScope, Public, SpecialName
+    remove_MouseLeave(EventHandler): PrivateScope, Public, SpecialName
+    add_MouseMove(MouseEventHandler): PrivateScope, Public, SpecialName
+    remove_MouseMove(MouseEventHandler): PrivateScope, Public, SpecialName
+    add_MouseUp(MouseEventHandler): PrivateScope, Public, SpecialName
+    remove_MouseUp(MouseEventHandler): PrivateScope, Public, SpecialName
+    add_MouseWheel(MouseEventHandler): PrivateScope, Public, SpecialName
+    remove_MouseWheel(MouseEventHandler): PrivateScope, Public, SpecialName
+    add_Move(EventHandler): PrivateScope, Public, SpecialName
+    remove_Move(EventHandler): PrivateScope, Public, SpecialName
+    add_Paint(PaintEventHandler): PrivateScope, Public, SpecialName
+    remove_Paint(PaintEventHandler): PrivateScope, Public, SpecialName
+    add_ParentChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_ParentChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_PreviewKeyDown(PreviewKeyDownEventHandler): PrivateScope, Public, SpecialName
+    remove_PreviewKeyDown(PreviewKeyDownEventHandler): PrivateScope, Public, SpecialName
+    add_QueryAccessibilityHelp(QueryAccessibilityHelpEventHandler): PrivateScope, Public, SpecialName
+    remove_QueryAccessibilityHelp(QueryAccessibilityHelpEventHandler): PrivateScope, Public, SpecialName
+    add_RegionChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_RegionChanged(EventHandler): PrivateScope, Public, SpecialName
+    add_VisibleChanged(EventHandler): PrivateScope, Public, SpecialName
+    remove_VisibleChanged(EventHandler): PrivateScope, Public, SpecialName
+    get_AccessibilityObject(): PrivateScope, Public, SpecialName
+    get_AccessibleDefaultActionDescription(): PrivateScope, Public, SpecialName
+    set_AccessibleDefaultActionDescription(String): PrivateScope, Public, SpecialName
+    get_AccessibleDescription(): PrivateScope, Public, SpecialName
+    set_AccessibleDescription(String): PrivateScope, Public, SpecialName
+    get_AccessibleName(): PrivateScope, Public, SpecialName
+    set_AccessibleName(String): PrivateScope, Public, SpecialName
+    get_AccessibleRole(): PrivateScope, Public, SpecialName
+    set_AccessibleRole(AccessibleRole): PrivateScope, Public, SpecialName
+    get_Anchor(): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    set_Anchor(AnchorStyles): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    get_BorderColor(): PrivateScope, Public, SpecialName
+    set_BorderColor(Color): PrivateScope, Public, SpecialName
+    get_BorderStyle(): PrivateScope, Public, SpecialName
+    set_BorderStyle(DashStyle): PrivateScope, Public, SpecialName
+    get_BorderWidth(): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    set_BorderWidth(Int32): PrivateScope, Public, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    get_ExtentBounds(): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    get_BoundRect(): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    set_BoundRect(Rectangle): PrivateScope, Assembly, Virtual, VtableLayoutMask, CheckAccessOnOverride, SpecialName
+    get_CanFocus(): PrivateScope, Public, SpecialName
+    get_CanSelect(): PrivateScope, Public, SpecialName
+    get_Container(): PrivateScope, Public, SpecialName
 Struct Microsoft.VisualBasic.PowerPacks.Shape+RegionType: AutoLayout, AnsiClass, Class, NestedAssembly, Sealed
   :System.Enum
   Fields:
